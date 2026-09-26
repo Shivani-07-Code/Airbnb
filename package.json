@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Shivani-07-Code/Airbnb/issues"
   },
-  "homepage": "https://github.com/Shivani-07-Code/Airbnb#readme"
+  "homepage": "https://github.com/Shivani-07-Code/Airbnb#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
