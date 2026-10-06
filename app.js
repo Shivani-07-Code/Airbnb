@@ -18,14 +18,17 @@ async function main() {
     await mongoose.connect(MONGO_URL);
 }
 
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 app.get("/", (req, res) => {
     res.send("hi i am root");
 });
 
-app.get("/listing", async (req, res) => {
+app.get("/listings", async (req, res) => {
     const allListings = await listing.find({});
     console.log(allListings);
-    res.send(allListings);
+    res.render("listings/index.ejs", {allListings});
 });
 
 // app.get("/testListing", async (req, res) => {
