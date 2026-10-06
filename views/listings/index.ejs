@@ -7,5 +7,10 @@
 </head>
 <body>
     <h3>All Listings</h3>
+    <ul>
+    <% for(let listing of allListings) { %>
+    <Li><a href="/listings/<%= listing.id %>"><%= listing.title %></a></Li>
+    <% } %>
+    </ul>
 </body>
 </html>
