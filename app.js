@@ -28,7 +28,6 @@ app.get("/", (req, res) => {
     res.send("hi i am root");
 });
 
-
 //Index Route
 app.get("/listings", async (req, res) => {
     const allListings = await listing.find({});
@@ -66,6 +65,14 @@ app.put("/listings/:id", async (req, res) => {
     let {id} = req.params;
     await listing.findByIdAndUpdate(id, {...req.body.listing});
     res.redirect(`/listings/${id}`);
+});
+
+//Delete Route
+app.delete("/listings/:id", async (req, res) => {
+    let {id} = req.params;
+    let deletedListing = await listing.findByIdAndDelete(id);
+    console.log(deletedListing);
+    res.redirect("/listings");
 });
 
 // app.get("/testListing", async (req, res) => {
