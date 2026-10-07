@@ -5,9 +5,29 @@
     <!-- <form method="GET" action="/listings/new">
         <button>Create New Listing</button>
     </form> -->
-    <ul>
-    <% for(let listing of allListings) { %>
-    <Li><a href="/listings/<%= listing.id %>"><%= listing.title %></a></Li>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let listing of allListings) { %>
+        <div class="col mb-4">
+                <a href="/listings/<%= listing._id %>" class="listing-link">
+
+                    <div class="card">
+                        <img 
+                            src="<%= listing.image.url %>" 
+                            class="card-img-top" 
+                            alt="listing_image"
+                        >
+
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b><%= listing.title %></b>
+                                <br>
+                                ₹ <%= listing.price ? listing.price.toLocaleString("en-IN") : "N/A" %>/night
+                            </p>
+                        </div>
+                    </div>
+
+                </a>
+            </div>
     <% } %>
-    </ul>
+    </div>
 </body>
