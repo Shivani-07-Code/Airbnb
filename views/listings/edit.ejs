@@ -7,7 +7,7 @@
                 <label for="title" class="form-label">Title</label>
                 <input 
                     name="listing[title]" 
-                    value= <%= listing.title %> 
+                    value= "<%= listing.title %>" 
                     type="text" 
                     class="form-control"
                 >
@@ -24,7 +24,7 @@
             <div class="mb-3">
                 <label for="image" class="form-label">Image Link</label>
                 <input 
-                    name="listing[image]" 
+                    name="listing[image][url]" 
                     value= <%= listing.image.url %> 
                     type="text"
                     class="form-control"
