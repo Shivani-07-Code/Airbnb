@@ -9,7 +9,7 @@ const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { type } = require("os");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/airbnb";
+const MONGO_URL = "mongodb://127.0.0.1:27017/Stayora";
 
 main()
 .then(() => {
